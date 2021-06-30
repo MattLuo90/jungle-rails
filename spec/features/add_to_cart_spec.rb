@@ -20,13 +20,13 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
     # ACT
     visit root_path
     
-    expect(page).to have_content('My Cart (0)')
+    expect(page).to have_text('My Cart (0)')
     save_screenshot "add_item_0.png"
   
     # VERIFY
     click_button('Add', match: :first)
   
-    expect(page).to have_content('My Cart (1)')
+    expect(page).to have_text('My Cart (1)')
   
     # DEBUG
     save_screenshot "add_item_1.png"
