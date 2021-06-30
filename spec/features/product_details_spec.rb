@@ -20,16 +20,12 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     # ACT
     visit root_path
 
-    # VERIFY
-    # first(:link, '.btn-default').click
-    # click_link '.btn-default', match: :first
+    # VERIFY/# DEBUG
     find('.btn-default', match: :first).click
     
+    save_screenshot "product-detail.png"
 
     expect(page).to have_text ('Description')
-    
-    # DEBUG
-    save_screenshot "product-detail.png"
 
   end
 
